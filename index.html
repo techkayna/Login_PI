@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTraffic PI - Governança Semafórica IoT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="telaLogin" class="card login-container">
+        <div class="header">
+            <div class="icone-topo">🚦</div>
+            <h1>SmartTraffic PI</h1>
+            <p>Governança Inteligente de Semáforos IoT</p>
+        </div>
+
+        <form id="loginForm" onsubmit="realizarLogin(event)">
+            <div class="input-group">
+                <label for="usuario">Usuário </label>
+                <input type="text" id="usuario" placeholder="Digite seu usuário" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+            </div>
+
+            <button type="submit" class="btn-primario">Entrar no Sistema</button>
+        </form>
+
+        <div id="mensagem" class="mensagem"></div>
+    </div>
+
+    <div id="telaPainel" class="card painel-container oculto">
+        <div class="painel-topo">
+            <div>
+                <h2>🚦 Central de Governança Semafórica</h2>
+                <span class="badge-online">● Sistema Conectado | Usuário: <strong id="nomeOperador">admin</strong></span>
+            </div>
+            <button onclick="realizarLogout()" class="btn-sair">Sair</button>
+        </div>
+
+        <div class="painel-conteudo">
+            
+            <div class="semaforo-box">
+                <div class="semaforo-corpo">
+                    <div id="luz-vermelha" class="luz vermelha"></div>
+                    <div id="luz-amarela" class="luz amarela"></div>
+                    <div id="luz-verde" class="luz verde ativa"></div>
+                </div>
+                <p id="statusSemaforo" class="status-texto">Sinal Aberto (Fluxo Livre)</p>
+            </div>
+
+            <div class="controles-box">
+                <h3>Cruzamento #04 - Av. Principal</h3>
+                <p class="subtexto">Simulação de atuação remota via protocolo IoT:</p>
+                
+                <div class="botoes-fase">
+                    <button onclick="mudarFase('verde')" class="btn-fase verde">Verde</button>
+                    <button onclick="mudarFase('amarela')" class="btn-fase amarela">Amarelo</button>
+                    <button onclick="mudarFase('vermelha')" class="btn-fase vermelha">Vermelho</button>
+                </div>
+
+                <div class="metricas">
+                    <div class="metrica-item">
+                        <span>Semáforos Ativos</span>
+                        <strong>24 / 24</strong>
+                    </div>
+                    <div class="metrica-item">
+                        <span>Modo de Operação</span>
+                        <strong>Adaptativo IoT</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

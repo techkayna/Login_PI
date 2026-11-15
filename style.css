@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.oculto {
+    display: none !important;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    width: 100%;
+}
+
+.login-container {
+    max-width: 390px;
+    padding: 35px 30px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.icone-topo {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.header h1 {
+    color: #203a43;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.header p {
+    color: #666;
+    font-size: 13px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2c5364;
+}
+
+.btn-primario {
+    width: 100%;
+    padding: 12px;
+    background-color: #203a43;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primario:hover {
+    background-color: #2c5364;
+}
+
+.mensagem {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.erro {
+    color: #dc3545;
+}
+
+.painel-container {
+    max-width: 620px;
+    padding: 28px 30px;
+}
+
+.painel-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 15px;
+    margin-bottom: 22px;
+}
+
+.painel-topo h2 {
+    color: #203a43;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.badge-online {
+    font-size: 13px;
+    color: #1e7e34;
+}
+
+.btn-sair {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-sair:hover {
+    background-color: #b52a37;
+}
+
+.painel-conteudo {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.semaforo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 160px;
+}
+
+.semaforo-corpo {
+    background-color: #1e1e1e;
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+.luz {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    opacity: 0.22;
+    transition: all 0.25s ease;
+}
+
+.luz.vermelha { background-color: #ff3b30; }
+.luz.amarela  { background-color: #ffcc00; }
+.luz.verde    { background-color: #34c759; }
+
+.luz.ativa {
+    opacity: 1;
+    box-shadow: 0 0 18px currentColor;
+}
+
+.luz.vermelha.ativa { box-shadow: 0 0 20px #ff3b30; }
+.luz.amarela.ativa  { box-shadow: 0 0 20px #ffcc00; }
+.luz.verde.ativa    { box-shadow: 0 0 20px #34c759; }
+
+.status-texto {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.controles-box {
+    flex: 2;
+    min-width: 240px;
+}
+
+.controles-box h3 {
+    color: #203a43;
+    margin-bottom: 6px;
+}
+
+.subtexto {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 14px;
+}
+
+.botoes-fase {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-fase {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.btn-fase:active {
+    transform: scale(0.96);
+}
+
+.btn-fase.verde    { background-color: #28a745; }
+.btn-fase.amarela  { background-color: #e0a800; color: #222; }
+.btn-fase.vermelha { background-color: #dc3545; }
+
+.metricas {
+    display: flex;
+    gap: 12px;
+}
+
+.metrica-item {
+    flex: 1;
+    background-color: #f4f7f8;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #203a43;
+}
+
+.metrica-item span {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.metrica-item strong {
+    font-size: 15px;
+    color: #203a43;
+}
